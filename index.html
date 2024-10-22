@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beranda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Selamat Datang di Halaman Beranda</h1>
+    <p>Ini adalah halaman beranda website kita.</p>
+    <a href="about.html">Tentang Kami</a>
+    <button onclick="bukaBukuTamu()">Buka Buku Tamu</button>
+    <table id="bukuTamu">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Pesan</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        function bukaBukuTamu() {
+            const nama = prompt("Masukkan nama Anda:");
+            const email = prompt("Masukkan email Anda:");
+            const pesan = prompt("Masukkan pesan Anda:");
+
+            // Tambahkan baris baru ke tabel
+            const tabel = document.getElementById("bukuTamu").getElementsByTagName('tbody')[0];
+            const barisBaru = tabel.insertRow();
+            const selNama = barisBaru.insertCell(0);
+            const selEmail = barisBaru.insertCell(1);
+            const selPesan = barisBaru.insertCell(2);
+            selNama.textContent = nama;
+            selEmail.textContent = email;
+            selPesan.textContent = pesan;
+        }
+    </script>
+</body>
+</html>
